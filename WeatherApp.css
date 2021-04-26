@@ -1,0 +1,173 @@
+html {
+  min-height: 100%;
+}
+body {
+  background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+}
+
+.weatherApp {
+  border: 1px solid;
+  border-radius: 15px;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+}
+#searchCity {
+  width: 300px;
+  margin-left: 10px;
+  margin-top: 20px;
+  border-color: #7c064d;
+  opacity: 0.8;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+#searchButton {
+  background-color: #45285d;
+  color: #d2dee3;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+  position: relative;
+  right: 208px;
+  top: 18px;
+}
+#searchButton:hover {
+  cursor: pointer;
+  transition: 250ms solid ease-in;
+  background-color: #7c064d;
+  opacity: 0.8;
+}
+#currentLocationButton {
+  background-color: #45285d;
+  color: #d2dee3;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+  position: relative;
+  right: 220px;
+  top: 18px;
+}
+#currentLocationButton:hover {
+  cursor: pointer;
+  transition: 250ms solid ease-in;
+  background-color: #7c064d;
+  opacity: 0.8;
+}
+
+h1 {
+  text-align: center;
+  font-size: 80px;
+  font-weight: 600;
+  margin-top: 50px;
+  color: #45285d;
+  font-family: "Kiwi Maru", serif;
+  padding: 0 10px;
+  text-transform: capitalize;
+}
+.date {
+  text-align: center;
+  color: #7c064d;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.time {
+  text-align: center;
+  color: #7c064d;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h2 {
+  text-align: center;
+  color: #45285d;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
+}
+h3,
+h4 {
+  display: inline;
+  margin: 0 auto;
+}
+h3 {
+  margin-left: 70px;
+  font-size: 100px;
+  font-weight: 700;
+}
+a {
+  text-decoration: none;
+  color: #45285d;
+  font-family: Arial, Helvetica, sans-serif;
+}
+a:hover {
+  color: #858e96;
+  font-weight: bolder;
+}
+.temperature {
+  margin-left: 70px;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 100px;
+  text-align: center;
+  text-indent: 250px;
+  color: #45285d;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.degree {
+  text-align: left;
+  text-indent: 15px;
+  line-height: 50px;
+  color: #45285d;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.attributes {
+  color: #7c064d;
+  font-size: 10px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  text-indent: -80px;
+  width: 150px;
+  margin-top: 60px;
+}
+.realFeeling {
+  text-align: center;
+  color: #7c064d;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  text-indent: 20px;
+}
+
+.realFeelingTemp {
+  text-align: center;
+}
+.col {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 10px;
+}
+h5 {
+  color: #4a304d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+}
+.fas {
+  color: #7a4579;
+  font-size: 25px;
+}
+hr {
+  color: #7a4579;
+  opacity: 0.5;
+}

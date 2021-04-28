@@ -171,3 +171,10 @@ hr {
   color: #7a4579;
   opacity: 0.5;
 }
+
+.credits {
+  color: #4a304d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  text-align: center;
+}

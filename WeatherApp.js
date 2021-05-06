@@ -66,6 +66,13 @@ function search(event) {
     ).innerHTML = `${Math.round(response.data.main.feels_like)}ºC`;
     /* Weather Description */ document.querySelector("#description").innerHTML =
       response.data.weather[0].description;
+
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+    iconElement.setAttribute("alt", response.data.weather[0].description);
     let apiKey = "935d274474278d462bed68ee689c049b";
     let units = "metric";
     let city = searchCity.value;

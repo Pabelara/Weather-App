@@ -118,6 +118,11 @@ a {
 a:hover {
   color: #858e96;
   font-weight: bolder;
+  cursor: default;
+}
+.active {
+  color: #7a4579;
+  font-weight: bolder;
 }
 .temperature {
   margin-left: 70px;

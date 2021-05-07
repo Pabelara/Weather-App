@@ -52,6 +52,7 @@ function search(event) {
     event.preventDefault();
 
     celsiusTemperature = response.data.main.temp;
+    celsiusRealTemperature = response.data.main.feels_like;
 
     /* City Name */ document.querySelector("#city").innerHTML =
       response.data.name;
@@ -66,7 +67,7 @@ function search(event) {
     ).innerHTML = `Wind Speed: ${Math.round(response.data.wind.speed)} km/h`;
     /* Real Feeling */ document.querySelector(
       "li.realTemp"
-    ).innerHTML = `${Math.round(response.data.main.feels_like)}ºC`;
+    ).innerHTML = `${Math.round(celsiusRealTemperature)}ºC`;
     /* Weather Description */ document.querySelector("#description").innerHTML =
       response.data.weather[0].description;
 
@@ -89,12 +90,14 @@ function search(event) {
 }
 
 let celsiusTemperature = null;
+let celsiusRealTemperature = null;
 
 function convertToFahrenheit(event) {
   event.preventDefault();
-  let fahrenheitTemperature = celsiusTemperature * 1.8 + 32;
   let temperatureElement = document.querySelector("#temperature");
-  let temperature = temperatureElement.innerHTML;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = celsiusTemperature * 1.8 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
@@ -103,12 +106,24 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 function convertToCelsius(event) {
   event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
+
+function convertToRealFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#realTemp");
+  let fahrenheitRealTemperature = celsiusRealTemperature * 1.8 + 32;
+  temperatureElement.HTML = Math.round(fahrenheitRealTemperature);
+}
+
+let realFahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToRealFahrenheit);
 
 let searchForm = document.querySelector(".search-form");
 searchForm.addEventListener("submit", search);

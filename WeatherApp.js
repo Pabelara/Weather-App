@@ -117,13 +117,24 @@ celsiusLink.addEventListener("click", convertToCelsius);
 
 function convertToRealFahrenheit(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#realTemp");
+  let realTemperatureElement = document.querySelector("#realTemp");
   let fahrenheitRealTemperature = celsiusRealTemperature * 1.8 + 32;
-  temperatureElement.HTML = Math.round(fahrenheitRealTemperature);
+  realTemperatureElement.innerHTML = `${Math.round(
+    fahrenheitRealTemperature
+  )}º`;
 }
 
 let realFahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToRealFahrenheit);
+
+function convertToRealCelsius(event) {
+  event.preventDefault();
+  let realTemperatureElement = document.querySelector("#realTemp");
+  realTemperatureElement.innerHTML = `${Math.round(celsiusTemperature)}º`;
+}
+
+let realCelsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertToRealCelsius);
 
 let searchForm = document.querySelector(".search-form");
 searchForm.addEventListener("submit", search);

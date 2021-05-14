@@ -181,6 +181,10 @@ h5 {
   color: #7a4579;
   font-size: 25px;
 }
+#forecast {
+  display: inline;
+  text-align: center;
+}
 hr {
   color: #7a4579;
   opacity: 0.5;

@@ -37,7 +37,8 @@ dateElement.innerHTML = ` Last Updated: ${currentDay}, ${currentMonth} ${current
 let timeElement = document.querySelector("li.time");
 timeElement.innerHTML = `${currentHour}:${currentMinutes}`;
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = '<div class ="row">';
@@ -63,6 +64,14 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "935d274474278d462bed68ee689c049b";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -93,6 +102,8 @@ function displayTemperature(response) {
     response.data.weather[0].description
   );
   realFeelingElement.innerHTML = `${Math.round(celsiusRealTemperature)}ºC`;
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -175,4 +186,3 @@ let realCelsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToRealCelsius);
 
 search("Madrid");
-displayForecast();

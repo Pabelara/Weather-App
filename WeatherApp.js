@@ -57,7 +57,7 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-  console.log(response.data.daily);
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = '<div class ="row">';
@@ -95,12 +95,71 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function formatHour(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let hour = date.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let currentHour = `${hour}:${minutes}`;
+
+  return currentHour;
+}
+
+function displayHourForecast(response) {
+  let hourForecast = response.data.hourly;
+
+  let hourForecastElement = document.querySelector("#hourForecast");
+
+  let hourForecastHTML = '<div class ="row">';
+
+  hourForecast.forEach(function (forecastHour, index) {
+    if (
+      index === 4 ||
+      index === 8 ||
+      index === 12 ||
+      index === 16 ||
+      index === 20 ||
+      index === 24
+    ) {
+      hourForecastHTML =
+        hourForecastHTML +
+        ` <div class="col-2">
+              <div class="weather-forecast-date">${formatHour(
+                forecastHour.dt
+              )}</div>
+          <img
+                src="http://openweathermap.org/img/wn/${
+                  forecastHour.weather[0].icon
+                }@2x.png"
+                alt="${forecastHour.weather[0].description}"
+                class="forecast-icon"
+                id="forecast-icon"
+                width="42"
+              />
+               <div class="weather-forecast-temperatures">
+              ${Math.round(forecastHour.temp)}º
+                </div>
+             </div>`;
+    }
+  });
+
+  hourForecastHTML = hourForecastHTML + `</div>`;
+  hourForecastElement.innerHTML = hourForecastHTML;
+}
+
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "935d274474278d462bed68ee689c049b";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
+  axios.get(apiUrl).then(displayHourForecast);
 }
 
 function displayTemperature(response) {

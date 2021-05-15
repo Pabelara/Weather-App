@@ -32,7 +32,7 @@ if (currentMinutes < 10) {
 }
 
 let dateElement = document.querySelector("li.date");
-dateElement.innerHTML = ` Last Updated: ${currentDay}, ${currentMonth} ${currentDate}`;
+dateElement.innerHTML = ` ${currentDay}, ${currentMonth} ${currentDate}`;
 
 let timeElement = document.querySelector("li.time");
 timeElement.innerHTML = `${currentHour}:${currentMinutes}`;

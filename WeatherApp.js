@@ -57,7 +57,6 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = '<div class ="row">';
@@ -113,8 +112,7 @@ function formatHour(timestamp) {
 
 function displayHourForecast(response) {
   let hourForecast = response.data.hourly;
-
-  let hourForecastElement = document.querySelector("#hourForecast");
+  let hourForecastElement = document.querySelector("#hour-forecast");
 
   let hourForecastHTML = '<div class ="row">';
 

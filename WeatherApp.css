@@ -2,16 +2,15 @@ html {
   min-height: 100%;
 }
 body {
-  background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
-
 .weatherApp {
   border: 1px solid;
   border-radius: 15px;
   margin: 20px auto;
   padding: 20px;
   max-width: 800px;
-  background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 #searchCity {
   width: 300px;
@@ -177,13 +176,13 @@ h5 {
   font-weight: 600;
   font-size: 25px;
 }
-.fas {
-  color: #7a4579;
-  font-size: 25px;
-}
-#forecast {
+
+#forecast,
+#hour-forecast {
   display: inline;
   text-align: center;
+  color: #4a304d;
+  font-weight: 400;
 }
 hr {
   color: #7a4579;
